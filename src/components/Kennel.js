@@ -4,6 +4,7 @@ import {AnimalCard} from "./animal/AnimalCard.js"
 import "./animal/Animal.css"
 import {LocationCard} from "./location/LocationCard.js"
 import "./location/Location.css"
+import {EmployeeCard} from "./employee/EmployeeCard.js"
 
 export const Kennel = () => (
 <> 
@@ -26,6 +27,14 @@ export const Kennel = () => (
             <LocationCard />
             <LocationCard />
         </article>
-</>
+        
+        <h2>Employees</h2>
+        <article className="locations">
+            <EmployeeCard />
+            <EmployeeCard />
+            <EmployeeCard />
+        </article>
+
+ </>
 
 )
