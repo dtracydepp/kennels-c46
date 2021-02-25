@@ -5,6 +5,9 @@ import "./animal/Animal.css"
 import {LocationCard} from "./location/LocationCard.js"
 import "./location/Location.css"
 import {EmployeeCard} from "./employee/EmployeeCard.js"
+import "./employee/Employee.css"
+import {CustomerCard} from "./customers/CustomerCard.js"
+import"./customers/Customer.css"
 
 export const Kennel = () => (
 <> 
@@ -29,10 +32,17 @@ export const Kennel = () => (
         </article>
         
         <h2>Employees</h2>
-        <article className="locations">
+        <article className="employees">
             <EmployeeCard />
             <EmployeeCard />
             <EmployeeCard />
+        </article>
+
+        <h2>Customers</h2>
+        <article className="customers">
+            <CustomerCard />
+            <CustomerCard />
+            <CustomerCard />
         </article>
 
  </>
