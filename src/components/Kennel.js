@@ -8,6 +8,7 @@ import {EmployeeCard} from "./employee/EmployeeCard.js"
 import "./employee/Employee.css"
 import {CustomerCard} from "./customers/CustomerCard.js"
 import"./customers/Customer.css"
+import {PropsAndState} from "./PropsAndState.js"
 
 export const Kennel = () => (
 <> 
@@ -18,6 +19,8 @@ export const Kennel = () => (
             <div>500 Puppy Way</div>
         </address>
 
+        <PropsAndState yourName="Tracy" />
+        
         <h2>Animals</h2>
         <article className="animals">
             <AnimalCard />
