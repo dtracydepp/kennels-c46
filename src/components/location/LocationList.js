@@ -19,7 +19,7 @@ export const LocationList = () => {
       <div className="locations">
         {console.log("LocationList: Render", locations)}
         {
-            // using .map method to iterate the array of animals and generate HTML for each one by invoking the "AnimalCard" comp
+            // using .map method to iterate the array of locations and generate HTML for each one by invoking the "LocationCard" comp
           locations.map(location=> {
             //   key and location become properties on the object passed in as in argument
             return <LocationCard key={location.id} location={location} />

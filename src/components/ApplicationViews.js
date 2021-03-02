@@ -4,9 +4,11 @@ import { Home } from "../Home.js"
 import { AnimalList } from "../components/animal/AnimalList.js"
 import { LocationList } from "../components/location/LocationList.js"
 import { CustomerCard } from "../components/customers/CustomerCard.js"
-import { EmployeeCard } from "../components/employee/EmployeeCard.js"
+import { EmployeeList } from "../components/employee/EmployeeList.js"
 import {AnimalProvider} from "../components/animal/AnimalProvider.js"
 import {LocationProvider} from"../components/location/LocationProvider.js"
+import { EmployeeProvider } from "./employee/EmployeeProvider.js"
+
 
 export const ApplicationViews = () => {
     return (
@@ -18,17 +20,19 @@ export const ApplicationViews = () => {
 
             {/*Render the location list when http://localhost:3000/locations */}
            <LocationProvider>
-            <Route exact path="/locations">
+            <Route path="/locations">
                 <LocationList />
             </Route>
             </LocationProvider>
 
             {/* Render the animal list when http://localhost:3000/animals */}
+            <LocationProvider>
             <AnimalProvider>
-                <Route exact path="/animals">
+                <Route path="/animals">
                     <AnimalList />
                 </Route>
             </AnimalProvider>
+            </LocationProvider>
 
             {/* /* Render the customer list when http://localhost:3000/customers */}
 
@@ -37,10 +41,11 @@ export const ApplicationViews = () => {
             </Route>
 
             {/* /* Render the employee list when http://localhost:3000/employees */}
-
+            <EmployeeProvider>
             <Route path="/employees">
-                <EmployeeCard />
+                <EmployeeList />
             </Route>
+            </EmployeeProvider>
 
         </>
     )
