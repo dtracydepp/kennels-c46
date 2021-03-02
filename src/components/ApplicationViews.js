@@ -3,11 +3,12 @@ import { Route } from "react-router-dom"
 import { Home } from "../Home.js"
 import { AnimalList } from "../components/animal/AnimalList.js"
 import { LocationList } from "../components/location/LocationList.js"
-import { CustomerCard } from "../components/customers/CustomerCard.js"
+import { CustomerList } from "../components/customers/CustomerList.js"
 import { EmployeeList } from "../components/employee/EmployeeList.js"
 import {AnimalProvider} from "../components/animal/AnimalProvider.js"
 import {LocationProvider} from"../components/location/LocationProvider.js"
 import { EmployeeProvider } from "./employee/EmployeeProvider.js"
+import { CustomerProvider } from "./customers/CustomerProvider.js"
 
 
 export const ApplicationViews = () => {
@@ -35,10 +36,11 @@ export const ApplicationViews = () => {
             </LocationProvider>
 
             {/* /* Render the customer list when http://localhost:3000/customers */}
-
+            <CustomerProvider>
             <Route path="/customers">
-                <CustomerCard />
+                <CustomerList />
             </Route>
+            </CustomerProvider>
 
             {/* /* Render the employee list when http://localhost:3000/employees */}
             <EmployeeProvider>
