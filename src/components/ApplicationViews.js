@@ -2,10 +2,11 @@ import React from "react"
 import { Route } from "react-router-dom"
 import { Home } from "../Home.js"
 import { AnimalList } from "../components/animal/AnimalList.js"
-import { LocationCard } from "../components/location/LocationCard.js"
+import { LocationList } from "../components/location/LocationList.js"
 import { CustomerCard } from "../components/customers/CustomerCard.js"
 import { EmployeeCard } from "../components/employee/EmployeeCard.js"
 import {AnimalProvider} from "../components/animal/AnimalProvider.js"
+import {LocationProvider} from"../components/location/LocationProvider.js"
 
 export const ApplicationViews = () => {
     return (
@@ -16,9 +17,11 @@ export const ApplicationViews = () => {
             </Route>
 
             {/*Render the location list when http://localhost:3000/locations */}
-            <Route path="/locations">
-                <LocationCard />
+           <LocationProvider>
+            <Route exact path="/locations">
+                <LocationList />
             </Route>
+            </LocationProvider>
 
             {/* Render the animal list when http://localhost:3000/animals */}
             <AnimalProvider>
