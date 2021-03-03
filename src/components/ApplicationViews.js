@@ -9,7 +9,7 @@ import { AnimalProvider } from "../components/animal/AnimalProvider.js"
 import { LocationProvider } from "../components/location/LocationProvider.js"
 import { EmployeeProvider } from "./employee/EmployeeProvider.js"
 import { CustomerProvider } from "./customers/CustomerProvider.js"
-// import {AnimalForm} from "../components/animal"
+import {AnimalForm} from "../components/animal/AnimalForm.js"
 
 
 export const ApplicationViews = () => {
@@ -35,7 +35,9 @@ export const ApplicationViews = () => {
                             <AnimalList />
                         </Route>
 
-                       
+                        <Route path="/animals/create">
+                            <AnimalForm />
+                        </Route>
 
                     </CustomerProvider>
                 </LocationProvider>
