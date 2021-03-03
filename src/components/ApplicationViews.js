@@ -9,6 +9,7 @@ import { AnimalProvider } from "../components/animal/AnimalProvider.js"
 import { LocationProvider } from "../components/location/LocationProvider.js"
 import { EmployeeProvider } from "./employee/EmployeeProvider.js"
 import { CustomerProvider } from "./customers/CustomerProvider.js"
+// import {AnimalForm} from "../components/animal"
 
 
 export const ApplicationViews = () => {
@@ -33,6 +34,9 @@ export const ApplicationViews = () => {
                         <Route exact path="/animals">
                             <AnimalList />
                         </Route>
+
+                       
+
                     </CustomerProvider>
                 </LocationProvider>
             </AnimalProvider>
