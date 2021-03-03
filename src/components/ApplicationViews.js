@@ -23,7 +23,7 @@ export const ApplicationViews = () => {
 
             {/*Render the location list when http://localhost:3000/locations */}
             <LocationProvider>
-                <Route path="/locations">
+                <Route exact path="/locations">
                     <LocationList />
                 </Route>
                 <Route path="/locations/create">

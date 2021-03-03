@@ -16,7 +16,7 @@ export const LocationForm = () => {
     const [locations, setLocations] = useState({
       name: "",
       address: "",
-      id: ""
+      id: 0,
       
     });
 
@@ -39,7 +39,7 @@ export const LocationForm = () => {
       const newLocation = { ...locations }
       let selectedVal = event.target.value
       // forms always provide values as strings. But we want to save the ids as numbers. 
-      if (event.target.id) {
+      if (event.target.id.includes("Id")) {
         selectedVal = parseInt(selectedVal)
       }
       /* Location is an object with properties.
