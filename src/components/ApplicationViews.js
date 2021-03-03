@@ -10,6 +10,7 @@ import { LocationProvider } from "../components/location/LocationProvider.js"
 import { EmployeeProvider } from "./employee/EmployeeProvider.js"
 import { CustomerProvider } from "./customers/CustomerProvider.js"
 import {AnimalForm} from "../components/animal/AnimalForm.js"
+import {LocationForm} from "../components/location/LocationForm.js"
 
 
 export const ApplicationViews = () => {
@@ -25,6 +26,9 @@ export const ApplicationViews = () => {
                 <Route path="/locations">
                     <LocationList />
                 </Route>
+                <Route path="/locations/create">
+                            <LocationForm />
+                        </Route>
             </LocationProvider>
 
             {/* Render the animal list when http://localhost:3000/animals */}
