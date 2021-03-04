@@ -3,9 +3,12 @@ import {AnimalContext} from "./AnimalProvider.js"
 import {LocationContext} from "../location/LocationProvider.js"
 import {CustomerContext} from "../customers/CustomerProvider.js"
 import {AnimalCard} from "./AnimalCard.js"
+import {useHistory} from "react-router-dom"
 import "./Animal.css"
 
 export const AnimalList = () => {
+// // The useHistory hook tells React which route to visit. Tells React to render the animal form component.
+  const history = useHistory()
     // This state changes when `getAnimals()` is invoked below
     const { animals, getAnimals } = useContext(AnimalContext)
     const { locations, getLocations } = useContext(LocationContext)
@@ -22,6 +25,10 @@ export const AnimalList = () => {
   
     return (
       <div className="animals">
+        <h2>Animals</h2>
+        <button onClick={() => {history.push("/animals/create")}}>
+            Add Animal
+          </button>
         {console.log("AnimalList: Render", animals)}
         {
             // using .map method to iterate the array of animals and generate HTML for each one by invoking the "AnimalCard" comp

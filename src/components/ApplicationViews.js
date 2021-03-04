@@ -9,7 +9,10 @@ import { AnimalProvider } from "../components/animal/AnimalProvider.js"
 import { LocationProvider } from "../components/location/LocationProvider.js"
 import { EmployeeProvider } from "./employee/EmployeeProvider.js"
 import { CustomerProvider } from "./customers/CustomerProvider.js"
-
+import { AnimalForm } from "../components/animal/AnimalForm.js"
+import { LocationForm } from "../components/location/LocationForm.js"
+import {EmployeeForm} from "../components/employee/EmployeeForm.js"
+ 
 
 export const ApplicationViews = () => {
     return (
@@ -21,8 +24,11 @@ export const ApplicationViews = () => {
 
             {/*Render the location list when http://localhost:3000/locations */}
             <LocationProvider>
-                <Route path="/locations">
+                <Route exact path="/locations">
                     <LocationList />
+                </Route>
+                <Route path="/locations/create">
+                    <LocationForm />
                 </Route>
             </LocationProvider>
 
@@ -33,6 +39,11 @@ export const ApplicationViews = () => {
                         <Route exact path="/animals">
                             <AnimalList />
                         </Route>
+
+                        <Route path="/animals/create">
+                            <AnimalForm />
+                        </Route>
+
                     </CustomerProvider>
                 </LocationProvider>
             </AnimalProvider>
@@ -46,9 +57,14 @@ export const ApplicationViews = () => {
 
             {/* /* Render the employee list when http://localhost:3000/employees */}
             <EmployeeProvider>
-                <Route path="/employees">
+                <LocationProvider>
+                <Route exact path="/employees">
                     <EmployeeList />
                 </Route>
+                <Route path="/employees/create">
+                    <EmployeeForm />
+                </Route>
+                </LocationProvider>
             </EmployeeProvider>
 
         </>
