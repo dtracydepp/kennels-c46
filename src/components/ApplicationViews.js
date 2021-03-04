@@ -11,7 +11,8 @@ import { EmployeeProvider } from "./employee/EmployeeProvider.js"
 import { CustomerProvider } from "./customers/CustomerProvider.js"
 import { AnimalForm } from "../components/animal/AnimalForm.js"
 import { LocationForm } from "../components/location/LocationForm.js"
-
+import {EmployeeForm} from "../components/employee/EmployeeForm.js"
+ 
 
 export const ApplicationViews = () => {
     return (
@@ -61,7 +62,7 @@ export const ApplicationViews = () => {
                     <EmployeeList />
                 </Route>
                 <Route path="/employees/create">
-                    <AnimalForm />
+                    <EmployeeForm />
                 </Route>
                 </LocationProvider>
             </EmployeeProvider>
