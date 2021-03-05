@@ -23,7 +23,11 @@ export const AnimalProvider = (props) => {
         })
         
     }
-
+// use expand to get animal data as well as the nested data on location and customer. The response will inclued objects for location and customer.
+    const getAnimalById = (id) => {
+        return fetch(`http://localhost:8088/animals/${id}?_expand=location&_expand=customer`)
+            .then(res => res.json())
+    }
     /*
         You return a context provider which has the
         `animals` state, `getAnimals` function,
@@ -32,7 +36,7 @@ export const AnimalProvider = (props) => {
     */
     return (
         <AnimalContext.Provider value={{
-            animals, getAnimals, addAnimal
+            animals, getAnimals, addAnimal, getAnimalById
         }}>
             {props.children}
         </AnimalContext.Provider>
