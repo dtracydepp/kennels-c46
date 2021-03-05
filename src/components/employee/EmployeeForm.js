@@ -8,7 +8,7 @@ export const EmployeeForm = () => {
     const { addEmployee } = useContext(EmployeeContext)
     const { locations, getLocations } = useContext(LocationContext)
     
-    // Questions: Is the employees on line 19, the same as in the Provider? Is the same as in Employee List, ln 12??
+    // Questions: Is the employees on line 19, the same as in the Provider? Is the same as in Employee List, ln 12?? For animals, setAnimals, I didn't use the same and it runs
 // Why do I not have to getEmployees in the useEffect? Because of EmployeeContext?
     /*
     With React, we do not target the DOM with `document.querySelector()`. Instead, our return (render) reacts to state or props.
